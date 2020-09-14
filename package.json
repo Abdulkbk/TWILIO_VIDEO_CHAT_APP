@@ -1,0 +1,32 @@
+{
+  "name": "video_chat",
+  "version": "1.0.0",
+  "description": "A videochat web app using twilio programmable video ",
+  "main": "server",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "scripts": {
+    "install-client": "cd client && npm install",
+    "start": "node server.js",
+    "client": "npm start --prefix client",
+    "nodemon": "nodemon server.js",
+    "dev": "concurrently \"npm run client\" \"npm run nodemon\"",
+    "packages": "npm install && npm run install-client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [
+    "Videoconference",
+    "video",
+    "chat",
+    "twilio"
+  ],
+  "author": "Abdulkbk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.5",
+    "twilio": "^3.49.1"
+  }
+}
